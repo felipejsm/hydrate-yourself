@@ -13,7 +13,6 @@
    
    angular
         .module('app',['firebase'])
-        .controller('myCtrl', function($firebaseObject) {
-            
+        .controller('myCtrl', function($firebaseObject, $scope) {
         })
 }());
