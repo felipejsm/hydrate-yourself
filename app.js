@@ -14,5 +14,6 @@
    angular
         .module('app',['firebase'])
         .controller('myCtrl', function($firebaseObject, $scope) {
+          $scope.thirst = false;
         })
 }());
