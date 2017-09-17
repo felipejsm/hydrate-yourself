@@ -20,9 +20,20 @@
     <!--CUSTOM-->
     <script src="app.js"></script>
 </head>
-<body ng-app="app" ng-controller="myCtrl as ctrl">
-    <h1>Have U hydrate yourself in the last hour?</h1>
-    <button>Yes, I'm veeeery hydrated</button>
-    <button>Nah</button>
+<body ng-app="app" ng-controller="myCtrl as ctrl" style="background: #111111">
+    <div class="container">
+        <div class="row" style="margin: auto; max-width: 750px;border-bottom: 1px solid #ccc;">
+            <h1 style="color:#FFF;">Have U hydrate yourself in the last hour?</h1>
+        </div>
+        <br />
+        <div class="row text-center">
+            <div class="col-sm-6">
+                    <button>Yes, I'm veeeery hydrated</button>
+            </div>
+            <div class="col-sm-6">
+                <button>Nah</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
