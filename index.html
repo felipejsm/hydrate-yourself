@@ -44,22 +44,22 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-danger" type="button">
+                    <button class="btn btn-danger" type="button" ng-click="ctrl.addWater(300)">
                             300 ml
                     </button>
                 </div>
                 <div class="col-sm-2">
-                        <button class="btn btn-warning" type="button">
+                        <button class="btn btn-warning" type="button" ng-click="ctrl.addWater(500)">
                                 500 ml
                         </button>
                 </div>
                 <div class="col-sm-2">
-                            <button class="btn btn-primary" type="button">
+                            <button class="btn btn-primary" type="button" ng-click="ctrl.addWater(600)">
                                     600 ml
                             </button>
                 </div>
                 <div class="col-sm-2">
-                        <button class="btn btn-sucess" type="button">
+                        <button class="btn btn-sucess" type="button" ng-click="ctrl.addWater(1000)">
                                 1 L
                         </button>
                 </div>
@@ -73,31 +73,11 @@
                 </div>
             
             </div>
-            <div style="margin: auto; max-width: 850px;margin-top: 25%">
+            <div style="margin: auto; max-width: 850px;margin-top: 15%">
                 <!--put water drinked, some how xD-->
                 <div>
                     <h1>
-                        <span style="color: #FF4136">Bad news, you're going to die of dehydration :(</span>
-                    </h1>
-                </div>
-                <div>
-                    <h1>
-                        <span style="color:#85144b">That's all you got?</span>
-                    </h1>
-                </div>
-                <div>
-                    <h1>
-                        <span style="color:#F012BE">uhm, you're warming up</span>
-                    </h1>
-                </div>
-                <div>
-                    <h1>
-                        <span style="color:#39CCCC">keep it up!</span>
-                    </h1>
-                </div>
-                <div>
-                    <h1>
-                        <span style="color:#0074D9">wooow, jeez! you're so hydrated ;)</span>
+                        <span ng-style="ctrl.myColorStyle"></span>
                     </h1>
                 </div>
             </div>
