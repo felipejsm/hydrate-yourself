@@ -16,6 +16,7 @@
         .controller('myCtrl', function($firebaseObject, $scope) {
           $scope.thirst = false;
           $scope.water = 0;
+          $scope.drinker = '';
           $scope.phrase = '';
           $scope.myColorStyle;// = {"color":""};
           $scope.addWater = addWater;
@@ -40,13 +41,13 @@
               } else if($scope.water > 600 && $scope.water <= 1000) {
                 $scope.phrase = "uhm, you're warming up";
                 $scope.myColorStyle = {"color":"#F012BE"};
-              } else if($scope.water > 1000 && $scope.water <= 1500) {
+              } else if($scope.water > 1000 && $scope.water <= 2000) {
                 $scope.phrase = "keep it up!";
                 $scope.myColorStyle = {"color":"#39CCCC"};
               } else if($scope.water > 2000 && $scope.wate < 3000) {
                 $scope.myColorStyle = {"color":"#0074D9"};
                 $scope.phrase = "wooow, jeez! you're so hydrated ;)";
-              } else if($scope.water > 3000) {
+              } else if($scope.water >= 3000) {
                 $scope.myColorStyle = {"color":"#FF4136"};
                 $scope.phrase = "Bad news, you're going to die of overhydration :'(";
               }
