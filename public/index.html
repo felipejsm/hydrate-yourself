@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hydrate U</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+    <!-- Firebase -->
+     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!-- BS v4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    
+    <!--CUSTOM-->
+    <script src="app.js"></script>
+</head>
+<body ng-app="app" ng-controller="myCtrl" style="background: #111111">
+    <div class="container" style="margin-top:25px;" ng-show='!thirst'>
+        <div class="row" style="margin-top:20px;margin: auto; max-width: 750px;border-bottom: 1px solid #ccc;">
+            <h1 style="color:#FFF;">Have U hydrate yourself in the last hour?</h1>
+        </div>
+        <br />
+        <div class="row text-center">
+            <div class="col-sm-6">
+                    <button class="btn btn-info">Yes, I'm veeeery hydrated</button>
+            </div>
+            <div class="col-sm-6" style="border-left: thick solid #FFF;">
+                <button class="btn btn-info" ng-click="setThirst(true)">Nah</button>
+            </div>
+        </div>
+    </div>
+    <div ng-show='thirst'>
+        <div class="container" style="margin-top:25px;">
+            <div class='row' style="margin: auto; max-width: 750px">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input type="text" ng-model="drinker" placeholder="You're name here, please" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-danger" type="button" ng-click="addWater(300)">
+                            300 ml
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                        <button class="btn btn-warning" type="button" ng-click="addWater(500)">
+                                500 ml
+                        </button>
+                </div>
+                <div class="col-sm-2">
+                            <button class="btn btn-primary" type="button" ng-click="addWater(600)">
+                                    600 ml
+                            </button>
+                </div>
+                <div class="col-sm-2">
+                        <button class="btn btn-sucess" type="button" ng-click="addWater(1000)">
+                                1 L
+                        </button>
+                </div>
+            </div>
+            <div class="row" style="margin: auto; max-width: 750px">
+                <div class="col-sm-6">
+                      <button class="btn btn-info col-md-offset-5" ng-click="reset()">I'm done</button>
+                </div>
+                <div class="col-sm-6">
+                      <label style="color:#0074D9;font-weight: bold">ml counter: {{water}}</label>
+                </div>
+            
+            </div>
+            <div style="margin: auto; max-width: 850px;margin-top: 15%">
+                <!--put water drinked, some how xD-->
+                <div>
+                    <h1>
+                        <span style="color:#0074D9;font-weight: bold" ng-show="drinker !== ''">Hi {{drinker}}!</span>
+                        <span ng-style="myColorStyle">{{phrase}}</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
