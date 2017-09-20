@@ -44,7 +44,7 @@
               } else if($scope.water > 1000 && $scope.water <= 2000) {
                 $scope.phrase = "keep it up!";
                 $scope.myColorStyle = {"color":"#39CCCC"};
-              } else if($scope.water > 2000 && $scope.wate < 3000) {
+              } else if($scope.water > 2000 && $scope.water < 3000) {
                 $scope.myColorStyle = {"color":"#0074D9"};
                 $scope.phrase = "wooow, jeez! you're so hydrated ;)";
               } else if($scope.water >= 3000) {
