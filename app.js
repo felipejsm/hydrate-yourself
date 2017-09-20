@@ -17,8 +17,19 @@
           $scope.thirst = false;
           $scope.water = 0;
           $scope.phrase = '';
-          $scope.myColorStyle = {"color":""};
-          $scope.addWater = function(val) {
+          $scope.myColorStyle;// = {"color":""};
+          $scope.addWater = addWater;
+          $scope.reset = reset;
+          $scope.setThirst = setThirst;
+          function setThirst(val) {
+            $scope.thirst = val;
+          }
+          function reset() {
+            $scope.thirst = false;
+            $scope.water  = 0;
+            $scope.phrase = '';
+          }
+          function addWater(val) {
               $scope.water += val;
               if($scope.water >= 0 && $scope.water <= 300) {
                 $scope.phrase = "Bad news, you're going to die of dehydration :(";
@@ -39,6 +50,7 @@
                 $scope.myColorStyle = {"color":"#FF4136"};
                 $scope.phrase = "Bad news, you're going to die of overhydration :'(";
               }
+              //$scope.$apply();
           }
         });
 }());
