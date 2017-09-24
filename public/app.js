@@ -18,15 +18,20 @@ firebase.initializeApp(config);
         $scope.water = 0;
         $scope.drinker = '';
         $scope.phrase = '';
-        $scope.myColorStyle;// = {"color":""};
+        $scope.myColorStyle;
         $scope.addWater = addWater;
         $scope.reset = reset;
         $scope.setThirst = setThirst;
+        $scope.logOut     = logOut;
+        function logOut() {
+          firebase.auth().signOut();
+          $window.location.href = 'login.html';
+        }
         firebase.auth().onAuthStateChanged(function(user) {
           if (user === null) {
             // User is not signed in.
-            $window.location.href = 'index.html';
-          } 
+            $window.location.href = 'login.html';
+          }
         });
         function setThirst(val) {
           $scope.thirst = val;
@@ -57,6 +62,7 @@ firebase.initializeApp(config);
               $scope.myColorStyle = {"color":"#FF4136"};
               $scope.phrase = "Bad news, you're going to die of overhydration :'(";
             }
+            //$scope.$apply();
         }
       });
 }());

@@ -22,10 +22,15 @@
           $scope.addWater = addWater;
           $scope.reset = reset;
           $scope.setThirst = setThirst;
+          $scope.logOut     = logOut;
+          function logOut() {
+            firebase.auth().signOut();
+            $window.location.href = 'login.html';
+          }
           firebase.auth().onAuthStateChanged(function(user) {
             if (user === null) {
               // User is not signed in.
-              $window.location.href = 'index.html';
+              $window.location.href = 'login.html';
             }
           });
           function setThirst(val) {
