@@ -20,13 +20,15 @@
             $scope.logOut     = logOut;
             function createUser() {
                 const auth = firebase.auth();
-                const promise = aut.createUserWithEmailAndPassword($scope.email, pass$scope.password);
+                const promise = aut.createUserWithEmailAndPassword($scope.email, $scope.password);
             }
             function loginUser() {
+                const auth = firebase.auth();
+                const promise = auth.signInWithEmailAndPassword($scope.email, $scope.password);
 
             }
             function logOut() {
-                
+                firebase.auth().signOut();
             }
 
     });
