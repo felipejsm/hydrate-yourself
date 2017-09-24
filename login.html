@@ -29,8 +29,8 @@
                         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
                       </label>
                       <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="loginUser()">Login</button>   
-                      <button id="btnSignUp" class="btn btn-info" type="submit" ng-click="createUser()">Sign Up</button>
-                      <button id="btnLogout" class="btn btn-primary hide" type="submit" ng-click="logOut()">Log Out</button>
+                      <button id="btnSignUp" class="btn btn-lg  btn-info btn-block" type="submit" ng-click="createUser()">Sign Up</button>
+                      <button id="btnLogout" class="btn btn-lg  btn-primary btn-block" ng-show="isLogged" type="submit" ng-click="logOut()">Log Out</button>
                     </form>
             </div>
     </div>
