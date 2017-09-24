@@ -13,11 +13,14 @@
    angular
         .module('app',['firebase'])
         .controller('myCtrl', function($firebaseObject, $scope) {
-            $scope.createUser = createUser;
             $scope.email;
             $scope.password;
+            $scope.createUser = createUser;
+            $scope.loginUser = loginUser;
             function createUser() {
-  
+                const auth = firebase.auth();
+                const promise = aut.createUserWithEmailAndPassword($scope.email, pass$scope.password);
             }
+
     });
 }());
