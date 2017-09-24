@@ -13,15 +13,21 @@
    
    angular
         .module('app',['firebase'])
-        .controller('myCtrl', function($firebaseObject, $scope) {
+        .controller('myCtrl', function($firebaseObject, $scope, $window) {
           $scope.thirst = false;
           $scope.water = 0;
           $scope.drinker = '';
           $scope.phrase = '';
-          $scope.myColorStyle;// = {"color":""};
+          $scope.myColorStyle;
           $scope.addWater = addWater;
           $scope.reset = reset;
           $scope.setThirst = setThirst;
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (user === null) {
+              // User is not signed in.
+              $window.location.href = 'index.html';
+            }
+          });
           function setThirst(val) {
             $scope.thirst = val;
           }
