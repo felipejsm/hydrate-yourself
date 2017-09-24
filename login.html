@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hydrate U</title>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
     <!-- BS v4 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -22,8 +29,11 @@
                         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
                       </label>
                       <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="loginUser()">Login</button>   
+                      <button id="btnSignUp" class="btn btn-info" type="submit" ng-click="createUser()">Sign Up</button>
+                      <button id="btnLogout" class="btn btn-primary hide" type="submit" ng-click="logOut()">Log Out</button>
                     </form>
-                  </div>
+            </div>
     </div>
+    <script src="indexApp.js"></script> 
 </body>
 </html>

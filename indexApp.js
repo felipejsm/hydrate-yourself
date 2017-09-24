@@ -16,10 +16,17 @@
             $scope.email;
             $scope.password;
             $scope.createUser = createUser;
-            $scope.loginUser = loginUser;
+            $scope.loginUser  = loginUser;
+            $scope.logOut     = logOut;
             function createUser() {
                 const auth = firebase.auth();
                 const promise = aut.createUserWithEmailAndPassword($scope.email, pass$scope.password);
+            }
+            function loginUser() {
+
+            }
+            function logOut() {
+                
             }
 
     });
