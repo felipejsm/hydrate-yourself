@@ -12,22 +12,23 @@
    
    angular
         .module('app',['firebase'])
-        .controller('myCtrl', function($firebaseObject, $scope) {
+        .controller('myCtrl', function($firebaseObject, $scope, $window) {
             $scope.email;
             $scope.password;
             $scope.isLogged = false;
             $scope.createUser = createUser;
             $scope.loginUser  = loginUser;
             $scope.logOut     = logOut;
+
             function createUser() {
                 const auth = firebase.auth();
                 const promise = auth.createUserWithEmailAndPassword($scope.email, $scope.password);
-                
             }
             function loginUser() {
                 const auth = firebase.auth();
                 const promise = auth.signInWithEmailAndPassword($scope.email, $scope.password);
-                promise.catch(e => console.log(e.message));
+                promise.then( e => $window.location.href = 'index.html');
+                promise.catch(e => alert('Login incorrect'));
             }
             function logOut() {
                 firebase.auth().signOut();
